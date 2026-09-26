@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KineticAds — Creative at Media-Buying Speed</title>
+<meta name="description" content="Ad creative produced by pipeline, not by hand. Variant batches, any language, built for networks and media buyers who burn creative weekly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#0a0c0f; --panel:#11151a; --panel2:#151a21; --line:#222932;
+    --ink:#f3f6fa; --body:#9aa4b2; --dim:#616c7a;
+    --volt:#c6f24e; --volt-dim:#8fae37; --hot:#ff5c3d;
+    --d:"Archivo",system-ui,sans-serif; --m:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:var(--d);font-size:15.5px;line-height:1.65;
+       -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  a{color:var(--volt);text-decoration:none}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,12,15,.88);
+      backdrop-filter:blur(10px);z-index:50}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:20px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--ink);font-size:17px;letter-spacing:-.03em}
+  .logo i{width:11px;height:11px;background:var(--volt);display:block;transform:skewX(-12deg)}
+  .navlinks{display:flex;gap:26px;font-family:var(--m);font-size:12.5px;color:var(--dim)}
+  .navlinks a{color:var(--dim)} .navlinks a:hover{color:var(--volt)}
+
+  /* hero */
+  header{padding:86px 0 70px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;
+    background:radial-gradient(circle,rgba(198,242,78,.09),transparent 65%);pointer-events:none}
+  .eyebrow{font-family:var(--m);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--volt);margin-bottom:24px}
+  h1{font-size:clamp(34px,6vw,62px);line-height:1.02;letter-spacing:-.035em;color:var(--ink);
+     font-weight:800;max-width:15ch}
+  h1 span{color:var(--volt)}
+  .deck{font-size:18.5px;max-width:56ch;margin-top:24px;color:var(--body)}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;align-items:center}
+  .btn{background:var(--volt);color:#0a0c0f;font-weight:700;font-size:14.5px;padding:13px 24px;
+    border-radius:3px;letter-spacing:-.01em}
+  .btn:hover{background:#d4ff5e}
+  .btn2{border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:14.5px;
+    padding:12px 22px;border-radius:3px;font-family:var(--m)}
+  .btn2:hover{border-color:var(--volt);color:var(--volt)}
+
+  /* problem strip */
+  .strip{border-bottom:1px solid var(--line);background:var(--panel)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line)}
+  .stat{background:var(--panel);padding:30px 26px}
+  .stat b{display:block;font-family:var(--d);font-weight:800;font-size:40px;color:var(--volt);
+    letter-spacing:-.035em;line-height:1}
+  .stat span{display:block;margin-top:11px;font-size:14px;color:var(--body);line-height:1.5}
+  .stat em{display:block;margin-top:9px;font-family:var(--m);font-size:10.5px;color:var(--dim);
+    font-style:normal;letter-spacing:.06em}
+
+  section{padding:74px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(25px,3.6vw,36px);color:var(--ink);font-weight:800;letter-spacing:-.03em;
+     line-height:1.12;max-width:20ch}
+  .lead{font-size:17px;max-width:60ch;margin-top:18px}
+  .lead b{color:var(--ink);font-weight:600}
+  .kick{font-family:var(--m);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--volt);margin-bottom:18px}
+
+  /* how */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;margin-top:44px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:28px 26px}
+  .card h3{color:var(--ink);font-size:18px;font-weight:700;letter-spacing:-.015em;margin-bottom:10px}
+  .card p{font-size:14.5px}
+  .card .num{font-family:var(--m);font-size:11px;color:var(--volt);letter-spacing:.14em;margin-bottom:16px}
+
+  /* work */
+  .work{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:40px}
+  video{width:100%;display:block;border-radius:3px;background:#000;border:1px solid var(--line)}
+  .cap{font-family:var(--m);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--dim);margin-top:10px}
+  .cap b{color:var(--ink);font-weight:500}
+  .note{margin-top:30px;font-size:14.5px;color:var(--dim);max-width:64ch;border-left:2px solid var(--line);
+    padding-left:16px}
+
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:42px}
+  .tier{background:var(--panel);padding:30px 24px;display:flex;flex-direction:column}
+  .tier.on{background:var(--panel2);box-shadow:inset 0 2px 0 var(--volt)}
+  .tier h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--dim);font-weight:500;margin-bottom:16px}
+  .tier.on h4{color:var(--volt)}
+  .price{font-size:33px;font-weight:800;color:var(--ink);letter-spacing:-.035em;line-height:1}
+  .price small{display:block;font-size:12.5px;font-weight:400;color:var(--dim);
+    font-family:var(--m);margin-top:8px;letter-spacing:.03em}
+  .tier ul{list-style:none;margin-top:20px;font-size:14px}
+  .tier li{padding:6px 0 6px 18px;position:relative}
+  .tier li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;
+    background:var(--volt-dim);transform:skewX(-12deg)}
+  .addon{margin-top:26px;font-family:var(--m);font-size:13px;color:var(--body);
+    background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 20px}
+  .addon b{color:var(--volt)}
+
+  /* compliance */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:start}
+  .rules{list-style:none;font-size:14.5px}
+  .rules li{padding:11px 0 11px 26px;position:relative;border-bottom:1px solid var(--line)}
+  .rules li::before{content:"\2715";position:absolute;left:0;top:11px;color:var(--hot);font-size:12px}
+  .rules li.y::before{content:"\2713";color:var(--volt)}
+
+  /* contact */
+  .end{padding:74px 0 90px;border:0}
+  .mail{display:inline-block;margin-top:20px;font-family:var(--m);font-size:17px;color:#0a0c0f;
+    background:var(--volt);padding:14px 24px;border-radius:3px;font-weight:600}
+  .tg{display:inline-block;margin:20px 0 0 10px;font-family:var(--m);font-size:15px;
+    border:1px solid var(--line);color:var(--ink);padding:13px 20px;border-radius:3px}
+  .tg:hover{border-color:var(--volt);color:var(--volt)}
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:var(--m);font-size:11.5px;
+    color:var(--dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:760px){
+    .split{grid-template-columns:1fr;gap:30px}
+    .navlinks{display:none}
+    header{padding:58px 0 48px}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo"><i></i>KineticAds</div>
+  <div class="navlinks">
+    <a href="#how">How</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#compliance">Compliance</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow">Creative supply for performance marketing</div>
+  <h1>Your ads die in <span>four days.</span></h1>
+  <p class="deck">We produce replacements faster than your campaigns burn them. Variant batches, any language, priced by the month — not by the video.</p>
+  <div class="cta">
+    <a class="btn" href="#pricing">See the batches</a>
+    <a class="btn2" href="#work">Watch the work &rarr;</a>
+  </div>
+</div></header>
+
+<div class="strip"><div class="wrap"><div class="stats">
+  <div class="stat"><b>4 days</b><span>Median run of a Meta ad before it is replaced</span><em>SAMPLE OF 24,000+ ADS, 2026</em></div>
+  <div class="stat"><b>8&ndash;12</b><span>New variants per platform per month, minimum, to avoid fatigue CPM spikes</span><em>15&ndash;50+ ABOVE $10K SPEND</em></div>
+  <div class="stat"><b>~60%</b><span>Of ad performance driven by creative &mdash; still produced by hand almost everywhere</span><em>THE BOTTLENECK</em></div>
+</div></div></div>
+
+<section id="how"><div class="wrap">
+  <div class="kick">The model</div>
+  <h2>Priced per batch, because that is how you consume it.</h2>
+  <p class="lead">A supplier who charges per video cannot solve a problem measured in dozens per month. Ours is a <b>production pipeline</b>: the cut is authored once, then variants, languages and formats come off it at near-zero marginal cost.</p>
+  <div class="grid3">
+    <div class="card"><div class="num">01 / BRIEF</div><h3>You send the offer</h3><p>Angle, geo, format, the landing page. No creative direction needed &mdash; that is the job you are outsourcing.</p></div>
+    <div class="card"><div class="num">02 / BUILD</div><h3>We author the master</h3><p>Composed frame by frame for your offer. Not stock, not a template swap. First batch inside 72 hours.</p></div>
+    <div class="card"><div class="num">03 / MULTIPLY</div><h3>Variants and languages</h3><p>Hooks, pacing, endcards and full localizations come off the same master. Minutes each, not days.</p></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="kick">Work</div>
+  <h2>Two verticals. Three languages. One pipeline.</h2>
+  <p class="lead">Every piece below was authored in-house, start to finish. Nothing is stock and nothing is a licensed template.</p>
+  <div class="work">
+    <div><video src="videos/planner-en.mp4" poster="videos/planner-en.jpg" muted loop playsinline controls preload="metadata"></video><div class="cap"><b>Master</b> &middot; EN &middot; 15s</div></div>
+    <div><video src="videos/planner-es.mp4" poster="videos/planner-es.jpg" muted loop playsinline controls preload="none"></video><div class="cap"><b>Localized</b> &middot; ES</div></div>
+    <div><video src="videos/planner-de.mp4" poster="videos/planner-de.jpg" muted loop playsinline controls preload="none"></video><div class="cap"><b>Localized</b> &middot; DE</div></div>
+    <div><video src="videos/mushroom-spec.mp4" poster="videos/mushroom-spec.jpg" muted loop playsinline controls preload="none"></video><div class="cap"><b>Supplements</b> &middot; zero-claim</div></div>
+  </div>
+  <p class="note">The Spanish and German cuts were rebuilt from the English master in roughly four minutes of machine time. That is the number that matters when you are entering a new geo: a proven creative, not a re-shoot.</p>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <div class="kick">Pricing</div>
+  <h2>Monthly batches. Cancel whenever.</h2>
+  <p class="lead">All tiers are vertical video, delivered in the formats and ratios you name. No usage limits &mdash; you bought it, you own it, run it anywhere, white-label it as yours.</p>
+  <div class="tiers">
+    <div class="tier"><h4>Test</h4><div class="price">$1,200<small>PER MONTH</small></div>
+      <ul><li>10 variants</li><li>72-hour first batch</li><li>One vertical</li><li>1 named contact</li></ul></div>
+    <div class="tier on"><h4>Growth &middot; most taken</h4><div class="price">$2,500<small>PER MONTH</small></div>
+      <ul><li>25 variants</li><li>48-hour turnaround</li><li>Up to 3 verticals</li><li>Weekly refresh cycle</li></ul></div>
+    <div class="tier"><h4>Scale</h4><div class="price">$5,000<small>PER MONTH</small></div>
+      <ul><li>60 variants</li><li>24&ndash;48 hour turnaround</li><li>Unlimited verticals</li><li>Dedicated queue</li></ul></div>
+    <div class="tier"><h4>One-off</h4><div class="price">$250<small>PER CUT</small></div>
+      <ul><li>Single master</li><li>No commitment</li><li>Becomes credit if you sign</li></ul></div>
+  </div>
+  <div class="addon"><b>Localization &mdash; $250 per language, per cut.</b> Any language. Same week. Agencies quote thousands per language and take weeks; this is the same proven creative rebuilt, not remade.</div>
+</div></section>
+
+<section id="compliance"><div class="wrap">
+  <div class="split">
+    <div>
+      <div class="kick">Compliance</div>
+      <h2>Creative your legal team does not kill.</h2>
+      <p class="lead">Since 2023 the FTC holds the <b>endorser</b> liable, not only the advertiser, and it has acted against companies specifically for claims made across their affiliate networks. In health and finance that is the difference between a creative you can scale and one that gets a channel shut.</p>
+      <p class="lead">We write the constraint into the creative rather than bolting it on at review. The supplement cut above makes <b>zero health claims</b> &mdash; it sells entirely on label literacy.</p>
+    </div>
+    <div>
+      <ul class="rules">
+        <li class="y">Structure and sourcing claims</li>
+        <li class="y">Price, format, delivery, guarantees</li>
+        <li class="y">Disclosure built into the cut</li>
+        <li class="y">Regulated-vertical review before delivery</li>
+        <li>No invented testimonials</li>
+        <li>No fabricated metrics or client names</li>
+        <li>No real person's likeness without consent</li>
+        <li>No casino, betting or adult work</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="end"><div class="wrap">
+  <div class="kick">Start</div>
+  <h2>One free cut. Pick a live offer.</h2>
+  <p class="lead">Send an offer that is running now and we will produce one creative for it at no charge, in your format. Judge the output before any money or contract is discussed. If it is not good you have lost an email.</p>
+  <div>
+    <a class="mail" href="mailto:seandexco@gmail.com?subject=KineticAds%20%E2%80%94%20free%20cut">seandexco@gmail.com</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
+  <span>KINETICADS &middot; CREATIVE SUPPLY FOR PERFORMANCE MARKETING</span>
+  <span>WORK SAMPLES ARE OUR OWN PRODUCTS &mdash; NO CLIENT WORK SHOWN WITHOUT PERMISSION</span>
+</div></footer>
+
+</body>
+</html>
